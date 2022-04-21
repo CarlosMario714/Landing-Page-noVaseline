@@ -1,0 +1,134 @@
+/* font-family: 'Rubik Glitch', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+/* font-family: 'VT323', monospace; */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=VT323&display=swap');
+
+body {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor1 {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: aquamarine;
+}
+
+.contenedor-titulo {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  width: 100%;
+  height: 100vh;
+  background: red;
+  clip-path: polygon(0 0, 15% 0, 31% 100%, 0% 100%);
+}
+
+.contenedor-titulo h1 {
+  margin-left: 20px;
+  font-family: 'Rubik Glitch', cursive;
+}
+
+.contenedor2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: aqua;
+}
+
+.contenedor3 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rebeccapurple;
+}
+
+.contenedor4 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: rgb(234, 255, 1);
+}
+
+.scroll-caption {
+  width: 50%;
+}
+
+.scrolled.slide-left{
+  animation: slide-in-left 1s ease-in-out both;
+}
+
+.scrolled.slide-rigth {
+  animation: slide-in-rigth 1s ease-in-out both;
+}
+
+
+ .scroll-element {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 50px;
+   width: 50%;
+   background-color: white;
+   height: 80vh;
+ }
+
+ .js-scroll {
+   position: relative; 
+   width: 50%;
+   height: 70vh;
+   background-color: #dadada;
+   transition: opacity 10s;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0
+  }
+  100% {
+    transform: translateX();
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-rigth {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0
+  }
+  100% {
+    transform: translateX();
+    opacity: 1;
+  }
+}
+
+.scroll-element h1 {
+  font-family: 'Rubik Glitch', cursive; 
+}
+
+.scroll-element p {
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  margin: 50px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+}
+
+footer p {
+  color: white;
+}
