@@ -1,74 +1,154 @@
+
 /* font-family: 'Rubik Glitch', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 /* font-family: 'VT323', monospace; */
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=VT323&display=swap');
+/*font-family: 'Turret Road', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road&display=swap');
 
 body {
   margin: 0;
 }
 
-.contenedor-principal {
-  width: 100%;
-  height: 100vh;
+.slides {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-  scroll-snap-type: block mandatory;
+  position: relative;
+  width: 100%;
 }
 
-.contenedor1 {
-  display: flex;
+/* .slides {
+  position: relative;
   width: 100%;
-  height: inherit;
-  background: aquamarine;
-  scroll-snap-align: end;
+  height: 100vh;
+  overflow-y: auto; 
+  scroll-snap-type: block mandatory;
+} */
+
+/*Contenedor principal*/
+.slide-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url(../Images/imagen-grande.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: center;
+  background-color: black;
+}
+
+video {
+  position: relative;
+  height: 100%;
+  left: -430px;
+  animation: video 7s;
+}
+
+@keyframes video {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.slide-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  animation: cortina 1 2s; 
+  animation-fill-mode: forwards;
+}
+
+@keyframes cortina {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  to {
+    clip-path: polygon(0 0, 15% 0, 30% 100%, 0% 100%);
+  }
+}
+
+.slide-titulo h1 {
+  padding: 0 80px;
+  background-color: black;
+  color: #fff;
+  font-family: 'Turret Road', cursive;
+  font-size: 70px;
+  animation-name: flicker;
+  animation-duration: 1.5s ;
+  animation-iteration-count: infinite ;
+  animation-delay: alternate ;
+  
+  /* animation: titulo 2s;
+  animation-fill-mode: none forwards;
+  animation: flicker 1.5s infinite alternate; */
 }
 
 .contenedor-titulo {
-  display: flex;
-  align-items: center;
-  font-size: 40px;
-  width: 100%;
-  height: inherit;
-  background: red;
-  clip-path: polygon(0 0, 15% 0, 31% 100%, 0% 100%);
+  animation: titulo 2s;
+  animation-fill-mode: forwards;
 }
 
-.contenedor-titulo h1 {
-  margin-left: 20px;
-  font-family: 'Rubik Glitch', cursive;
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
   
+  text-shadow: 
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+
 }
 
-.contenedor2 {
+@keyframes titulo {
+  from {
+    transform: translateX(100px);
+  }
+  
+  to {
+    transform: translateX(-980px);
+  }
+}
+
+
+
+/*contenedor secundario*/
+
+.slide-container {
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: inherit;
-  background: aqua;
-  scroll-snap-align: end;
-}
-
-.contenedor3 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: inherit;
-  background: rebeccapurple;
-  scroll-snap-align: end;
-}
-
-.contenedor4 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: inherit;
-  background: rgb(234, 255, 1);
-  scroll-snap-align: end;
-}
-
-.scroll-caption {
-  width: 50%;
+  font-size: 3vw;
+  color: aliceblue;
+  transition: opacity 10s;
 }
 
 .scrolled.slide-left{
@@ -79,25 +159,6 @@ body {
   animation: slide-in-rigth 1s ease-in-out both;
 }
 
-
- .scroll-element {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   margin: 50px;
-   width: 50%;
-   background-color: white;
-   height: 80vh;
- }
-
- .js-scroll {
-   position: relative; 
-   width: 50%;
-   height: 70vh;
-   background-color: #dadada;
-   transition: opacity 10s;
-}
 
 @keyframes slide-in-left {
   0% {
@@ -119,19 +180,11 @@ body {
     transform: translateX();
     opacity: 1;
   }
-}
+} 
 
-.scroll-element h1 {
-  font-family: 'Rubik Glitch', cursive; 
-}
 
-.scroll-element p {
-  font-family: 'VT323', monospace;
-  font-size: 30px;
-  margin: 50px;
-}
 
-footer {
+/* footer {
   display: flex;
   justify-content: center;
   gap: 100px;
@@ -142,4 +195,4 @@ footer {
 
 footer p {
   color: white;
-}
+} */
