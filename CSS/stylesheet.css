@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .slides {
   display: flex;
   flex-direction: column;
@@ -25,9 +29,9 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url(../Images/Fondo-1.png), url(../Images/Fondo.jpg) -300px;
+  background: url(../Images/Fondo.jpg) ;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: right;
   background-attachment: fixed;
 }
@@ -147,13 +151,46 @@ body {
   }
 }
 
+.texto-nav {
+  display: flex;
+  gap: 30px;
+  font-size: 15px;
+  color: #0fa;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  font-family: 'Turret Road', cursive;
+  background-color: #1d1f20;
+  border-radius: 15px;
+}
+
+.texto-nav a {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.texto-nav a:hover {
+  scale: 1.2 ;
+  transition: 0.5s;
+} 
+
+.texto-nav a:link {
+  color: #0fa;
+} 
+
+.texto-nav a:visited {
+  color: #0fa;; 
+} 
+
+
+
 .scaner2 {
   background-color: rgba(0, 255, 170, 0.702);
   position: absolute;
-  width: 860px;
+  width: 950px;
   height: 4px;
-  bottom: 5px;
-  right: 180px;
+  bottom: 30px;
+  right: 220px;
   animation-name: flicker2;
   animation-duration: 1.5s ;
   animation-iteration-count: infinite ;
@@ -184,6 +221,7 @@ body {
   position: absolute;
   bottom: calc(var(--y)/80);
   right: calc(var(--x)/80);
+  /* left: 10px; */
   width: 100%;
   height: 100vh;
 }
@@ -192,6 +230,7 @@ body {
   position: absolute;
   bottom: calc(var(--y)/-80);
   right: calc(var(--x)/-80);
+  /* left: 50px; */
   width: 100%;
   height: 100vh;
 }
@@ -228,23 +267,24 @@ body {
   height: 100vh;
 }
 
-/*contenedor secundario*/
+/*contenedor secundario slide 2*/
 
 .slide1 {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   height: 100vh;
   background: url(../Images/fondo-slide2.jpg);
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
-  background-position: 750px;
 }
 
-.slide-container{
+.slide-container.slide-left{
   position: relative;
-  --borderWidth: 3px;
+  --borderWidth: 5px;
   display: flex;
   flex-direction: column;
   background-color: #1d1f20;
@@ -254,12 +294,11 @@ body {
   justify-content: center;
   align-items: center;
   transition: opacity 15s;
-  border-radius: var(--borderWidth);
-
+  
 }
 
-.slide-container:after {
-  content: "";
+.slide-container.slide-left:after {
+  content: '';
   position: absolute;
   top: calc(-1 * var(--borderWidth));
   left: calc(-1 * var(--borderWidth));
@@ -290,23 +329,35 @@ body {
   height: 100%;
 } */
 
-.slide-container h1 {
-  color: white;
+.contenedor-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.609);
+  border-radius: calc(2 * var(--borderWidth));
+}
+
+.contenedor-texto h1 {
+  text-align: center;
+  color: #0fa;
   font-family: 'Turret Road', cursive;
   font-size: 50px;
 }
 
-.slide-container p {
-  color: white;
-  font-family: 'VT323', monospace;
+.contenedor-texto p {
+  padding: 0 50px;
+  text-align: center;
+  color: #0fa;
+  font-family: 'Turret Road', cursive;
   font-size: 30px;
-  padding: 50px;
   text-justify: auto;
 }
 
 .scrolled.slide-left {
-  animation: slide-in-left 2s ease-in-out both;
-  
+  animation: slide-in-left 2s ease-in-out both; 
 }
 
 .scrolled.scaner {
@@ -315,12 +366,6 @@ body {
   animation-fill-mode: forwards;
 
 }
-
-
-/* .scrolled.slide-rigth {
-  animation: slide-in-left 1s ease-in-out both;
-} */
-
 
 @keyframes slide-in-left {
   0% {
@@ -351,9 +396,9 @@ body {
 .scaner3 {
   background-color: rgba(0, 255, 170, 0.702);
   position: absolute;
-  width: 1400px;
+  width: 1450px;
   height: 4px;
-  bottom: 5px;
+  bottom: 20px;
   right: 300px;
   animation-name: flicker2;
   animation-duration: 1.5s ;
@@ -361,3 +406,313 @@ body {
   animation-delay: alternate ;
 }
 
+/*contenedor secundario slide 3*/
+
+.slide2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url(../Images/fondo-slide3..jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.slide-container.slide-rigth {
+  position: absolute;
+  --borderWidth: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1f20;
+  width: 40%;
+  height: 60%;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 15s;
+  right: 0;
+}
+
+.slide-container.slide-rigth:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg,#f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animategradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+.scrolled.slide-rigth {
+  animation: slide-rigth 2s ease-in-out both; 
+}
+
+.scrolled.scaner {
+  position: absolute;
+  animation: scaner 3s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-rigth {
+  0% {
+    transform: translateX(100px);
+    opacity: 0
+  }
+  100% {
+    transform: translateX();
+    opacity: 1;
+  }
+}
+.contenedor-texto.equipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-texto .equipo2 {
+  display: flex;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-texto .equipo2 img{
+  border-radius: 20px;
+  margin: 30px;
+  height: 400px;
+}
+
+.scaner4 {
+  background-color: rgba(0, 255, 170, 0.702);
+  position: absolute;
+  width: 720px;
+  height: 4px;
+  bottom: 20px;
+  left: 90px;
+  animation-name: flicker2;
+  animation-duration: 1.5s ;
+  animation-iteration-count: infinite ;
+  animation-delay: alternate ;
+}
+
+/*contenedor secundario slide 3*/
+
+.slide3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: url(../Images/fondo-final.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  gap: 50px;
+}
+
+.slide-container.slide-center.plataforma{
+  --borderWidth: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1f20;
+  width: 40%;
+  height: 15%;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 15s;
+}
+
+.slide-container.slide-center.plataforma:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg,#f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animategradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+.scrolled.slide-center {
+  animation: slide-center 2s ease-in-out both; 
+}
+
+
+@keyframes slide-center {
+  0% {
+    transform: translatey(-100px);
+    opacity: 0
+  }
+  100% {
+    transform: translatey();
+    opacity: 1;
+  }
+}
+
+.plataforma h1 {
+  font-size: 40px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.plataforma p {
+  font-size: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagen-discord img {
+  height: 100px;
+  width: auto;
+}
+
+.imagen-discord:hover {
+  scale: 1.2;
+  transition: 2s all;
+}
+
+
+.slide-container.slide-center.redes{
+  --borderWidth: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1f20;
+  width: 40%;
+  height: 15%;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 15s;
+  top: 500px;
+}
+
+.slide-container.slide-center.redes{
+  --borderWidth: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1f20;
+  width: 40%;
+  height: 15%;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 15s;
+  top: 500px;
+}
+
+.slide-container.slide-center.redes:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg,#f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animategradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+.redes h1 {
+  font-size: 40px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.redes p {
+  font-size: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.discord {
+  height: 100px;
+  width: auto;
+}
+
+.discord:hover {
+  scale: 1.2;
+  transition: 0.5s all;
+}
+
+.redessociales {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.video-final {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 150px;
+  animation: video 7s;
+}
+.scaner5 {
+  background-color: rgba(0, 255, 170, 0.702);
+  position: absolute;
+  width: 1600px;
+  height: 4px;
+  bottom: 20px;
+  left: 90px;
+  animation-name: flicker2;
+  animation-duration: 1.5s ;
+  animation-iteration-count: infinite ;
+  animation-delay: alternate ;
+}
+
+/*Ultimo slide pece out*/
+
+.peace-out {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  height: 1080px;
+  width: 1920px;
+  color: #5073b8;
+  font-family: 'VT323', monospace;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.slide-container a {
+  text-decoration: none;
+}
+
+.scaner6 {
+  background-color: rgba(0, 255, 170, 0.702);
+  position: absolute;
+  width: 700px;
+  height: 4px;
+  bottom: 450px;
+  left: 600px;
+  animation-name: flicker2;
+  animation-duration: 1.5s ;
+  animation-iteration-count: infinite ;
+  animation-delay: alternate ;
+}
