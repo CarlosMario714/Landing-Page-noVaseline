@@ -182,8 +182,6 @@ html {
   color: #0fa;; 
 } 
 
-
-
 .scaner2 {
   background-color: rgba(0, 255, 170, 0.702);
   position: absolute;
@@ -266,6 +264,15 @@ html {
   width: 100%;
   height: 100vh;
 }
+
+.slide-principal .icono5 {
+  position: absolute;
+  bottom: calc(var(--y)/-60);
+  right: calc(var(--x)/-60);
+  width: 100%;
+  height: 100vh;
+}
+
 
 /*contenedor secundario slide 2*/
 
@@ -489,6 +496,11 @@ html {
   height: 400px;
 }
 
+.equipo2 a:hover{
+  scale: 1.2;
+  transition: 2s;
+}
+
 .scaner4 {
   background-color: rgba(0, 255, 170, 0.702);
   position: absolute;
@@ -562,35 +574,6 @@ html {
   }
 }
 
-.plataforma h1 {
-  font-size: 40px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.plataforma p {
-  font-size: 20px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.imagen-discord img {
-  height: 100px;
-  width: auto;
-}
-
-.imagen-discord:hover {
-  scale: 1.2;
-  transition: 2s all;
-}
-
-
 .slide-container.slide-center.redes{
   --borderWidth: 5px;
   display: flex;
@@ -649,12 +632,12 @@ html {
   justify-content: center;
 }
 
-.discord {
-  height: 100px;
+.redessociales img {
+  height: 70px;
   width: auto;
 }
 
-.discord:hover {
+.redessociales img:hover {
   scale: 1.2;
   transition: 0.5s all;
 }
